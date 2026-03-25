@@ -75,7 +75,7 @@ public class ItemWriteRepositoryImpl implements ItemWriteRepository {
 		DeleteResult result = mongoTemplate.remove(query, GroceryItem.class);
 
 		if(result == null)
-			System.out.println("No document inserted");
+			System.out.println("No documents deleted");
 		else
 			System.out.println(result.getDeletedCount() + " documents deleted");
 	}

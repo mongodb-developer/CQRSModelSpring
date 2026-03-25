@@ -98,7 +98,7 @@ public class MdbSpringBootApplication implements CommandLineRunner{
 	 // 3. Get name and items of a all items of a particular category
 	 public void getItemsByCategory(String category) {
 		 System.out.println("Getting items for the category " + category);
-		 List<GroceryItem> list = groceryItemReadRepo.findAll(category);
+		 List<GroceryItem> list = groceryItemReadRepo.findAllbyCategory(category);
 		 
 		 list.forEach(item -> System.out.println("Name: " + item.getName() + ", Quantity: " + item.getItemQuantity()));
 	 }
