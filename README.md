@@ -1,5 +1,5 @@
 # mongodb-springboot
-The project demonstrates basic CRUD examples using MongoDB and SpringBoot for the repository pattern
+The project demonstrates Command Query Responsibility Segregation (CQRS) using MongoDB and SpringBoot for the repository pattern
 
 For this [tutorial](https://www.mongodb.com/compatibility/spring-boot), we need to create a Spring Boot project, which can be done easily using Spring Initialzr. It is advantageous to use an IDE (Integrated Development Environment) like Eclipse for this tutorial.
 
@@ -11,10 +11,10 @@ Edit the 'application.properties' file to point to a MongoDB deployment.
 # CRUD Examples using MongoRepository
 ### To create a document (item) in MongoDB, use the save() method:
 
-  `groceryItemRepo.save(new GroceryItem("Dried Red Chilli", "Dried Whole Red Chilli", 2, "spices"));`
+  `groceryItemWritemRepo.save(new GroceryItem("Dried Red Chilli", "Dried Whole Red Chilli", 2, "spices"));`
   
 ### To Read all the documents, use findAll() method:
-  `groceryItemRepo.findAll().forEach(item-> item.getName(),item.getQuantity(),item.getCategory());`
+  `groceryItemReadRepo.findAll().forEach(item-> item.getName(),item.getQuantity(),item.getCategory());`
   
 ### To Read documents based on a particular field, like name or category, by specifying the query parameters:
   	@Query("{name:'?0'}")
@@ -25,7 +25,7 @@ Edit the 'application.properties' file to point to a MongoDB deployment.
   
   
  ### To delete a document, use the delete method. For example, delete an item by ID using the deleteById() method:
-  `groceryItemRepo.deleteById(id);`
+  `groceryItemWritemRepo.deleteById(id);`
 	
  # Update using MongoTemplate 
  Updates using MongoTemplate are much easier with the out-of-box classes provided by MongoTemplate.

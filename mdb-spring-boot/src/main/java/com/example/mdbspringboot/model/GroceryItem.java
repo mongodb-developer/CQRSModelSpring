@@ -10,7 +10,6 @@ public class GroceryItem {
 
 		@Id
 		private String id;
-
 		private String name;
 		private int quantity;
 		private String category;
@@ -47,7 +46,7 @@ public class GroceryItem {
 			this.quantity = quantity;
 		}
 
-				public String getCategory() {
+		public String getCategory() {
 			return category;
 		}
 
